@@ -32,7 +32,7 @@ $(function(){
 	}
 	
 	function formatDate(date) {
-		return date.format('dddd Do, MMMM YYYY');
+		return date.format('dddd, Do MMMM YYYY');
 	}
 	
 	function formatTime(date) {

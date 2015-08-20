@@ -10,6 +10,22 @@ Locate the `config/auth-temp.ini` and create a copy called `config/auth.ini`. Th
 
 Populate the configuration options with your token and key information.
 
+### auth.ini
+
+Supply your access tokens/keys for the options in the authentication configuration file.
+
+```ini
+; Twitter OAuth Config options
+
+[OAuth]
+oauth_access_token = "Access Key"
+oauth_access_token_secret = "Access Secret"
+
+[Consumer]
+consumer_key = "Consumer Key"
+consumer_secret = "Consumer Secret"
+```
+
 ## Example
 
 The following example pulls down the five; most recent Tweets from Bill Gate's Twitter timeline.
