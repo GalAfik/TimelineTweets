@@ -1,5 +1,13 @@
 # Twitter API - User Timeline Example
 
+## Table of Contents
+
+  * [About](#about)
+  * [Setup](#setup)
+    * [auth.ini](#authini)
+  * [Example](#example)
+  * [Attributions](#attributions)
+
 ## About
 
 This application combines a JavaScript XHR request with a PHP script to pull down Tweets from a user's timeline.
