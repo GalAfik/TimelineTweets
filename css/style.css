@@ -1,0 +1,64 @@
+body {
+	background: #444;
+}
+
+/* Link */
+a:link, a:visited {
+    color: #5588FF;
+}
+
+/* Mouse Over Link */
+a:hover {
+    color: #92B2FC;
+}
+
+/* Selected Link */
+a:active {
+    color: #0032A8;
+}
+
+#header {
+	text-align: center;
+}
+
+#header-icon {
+	height: 64px;
+}
+
+.tweet-list {
+	padding: 0 1em;
+}
+
+.tweet-item {
+	margin: 1em 0;
+	padding: 0.25em;
+	background: #222;
+	border: thin solid #000;
+}
+
+.tweet-meta {
+	color: #666;
+}
+
+.tweet-date {
+	display: inline-block;
+}
+
+.tweet-date:after {
+	content: ' | ';
+}
+
+.tweet-time {
+	display: inline-block;
+	margin-left: 0.25em;
+}
+
+.tweet-content {
+	margin-left: 1em;
+	padding: 0.5em;
+	color: #FFF;
+}
+
+.tweet-text {
+	
+}
