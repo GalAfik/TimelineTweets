@@ -59,6 +59,11 @@ a:active {
 	color: #FFF;
 }
 
+.tweet-pick {
+	display: block;
+	float: left;
+}
+
 .tweet-text {
 	
 }

@@ -60,6 +60,10 @@ $(function(){
 				})))
 			.append($('<div>')
 				.addClass('tweet-content')
+				.append($('<img>', {
+					class : 'tweet-pic',
+					src : tweetObj.user.profile_image_url
+				}))
 				.append($('<div>', {
 					class : 'tweet-text',
 					html : processText(tweetObj.text)

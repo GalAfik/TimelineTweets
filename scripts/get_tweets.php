@@ -6,6 +6,7 @@ error_reporting(-1);
 header('Content-Type: application/json');
 
 require_once('../classes/TwitterProxy.class.php');
+require_once('json-pretty-print.php');
 
 $auth_filename = '../config/auth.ini';
 
@@ -40,7 +41,37 @@ if (!file_exists($auth_filename)) {
 	// Invoke the get method to retrieve results via a cURL request
 	$tweets = $twitter_proxy->get($twitter_url);
 
+	// Write filtered tweets to file.
+	writeFile('testFile.json', '../data', $tweets);
+
+	// Return original tweets.
 	echo $tweets;
+}
+
+function writeFile($filename, $dir, $tweetData) {
+	if (!file_exists($dir)) {
+		mkdir($dir, 0777, true);
+	}
+
+	$filepath = "$dir/$filename";
+
+	$filtered_tweets = array_map(function($tweet) {
+		$user = $tweet->{'user'};
+		return (object) array(
+			'userId' => $user->{'id'},
+			'user' => $user->{'name'},
+			'location' => $user->{'location'},
+			'text' => $tweet->{'text'},
+			'date' => $tweet->{'created_at'},
+			'retweetCount' => $tweet->{'retweet_count'},
+			'favoriteCount' => $tweet->{'favorite_count'}
+
+		);
+	}, json_decode($tweetData));
+
+	$fh = fopen($filepath, 'w');
+	fwrite($fh, json_format($filtered_tweets));
+	fclose($fh);
 }
 
 ?>
